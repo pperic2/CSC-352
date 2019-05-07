@@ -1,4 +1,7 @@
 package group5.toolshare;
 
-public interface AccountsRepository {
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface AccountsRepository extends MongoRepository<Accounts, String> {
+
 }
