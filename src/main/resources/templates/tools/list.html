@@ -1,0 +1,47 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/header :: common-header">Tools Listing
+</head>
+<body>
+<div th:replace="/fragments/header :: header"></div>
+<div class="col-md-6">
+    <input type="text" id="searchValue" onkeyup="toolSearcher()" placeholder="Search..">
+    <a class="btn btn-success" href="#" th:href="@{/tool(add)}"> Add Tool </a>
+</div>
+<div>
+    <table id="toolList" class="table">
+        <thead>
+        <tr>
+            <th scope="col"> Tool Name </th>
+            <th scope="col"> Tool Category </th>
+            <th scope="col"> Age </th>
+            <th scope="col"> Owner </th>
+<!--            <th scope="col"> Flights </th>-->
+<!--            <th scope="col"> Action </th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${tools.empty}">
+            <td colspan="2"> No Tools Available </td>
+        </tr>
+        <tr th:each="tool : ${tools}">
+            <td span th:text="${tool.toolName}"></td>
+            <td span th:text="${tool.toolCategory}"></td>
+            <td span th:text="${tool.age}"></td>
+            <td th:text="${tool.owner}"></td>
+<!--            <td>-->
+<!--                <a class="btn btn-info" th:href="@{/flight(arrivals,airportId=${airport.id})}"> Arrivals</a>-->
+<!--                <a class="btn btn-warning" th:href="@{/flight(departures,airportId=${airport.id})}"> Departures</a>-->
+<!--            </td>-->
+<!--            <td>-->
+<!--                <a class="btn btn-primary" th:href="@{/airport(edit,code=${airport.code})}"> Edit </a>-->
+<!--                <a class="btn btn-danger" th:href="@{/airport(delete,id=${airport.id})}"> Delete </a>-->
+<!--            </td>-->
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div th:replace="/fragments/footer :: footer"></div>
+</body>
+</html>
+

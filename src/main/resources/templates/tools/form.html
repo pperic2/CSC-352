@@ -1,0 +1,52 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <head th:replace="fragments/header :: common-header">
+    </head>
+
+<body>
+<div th:replace="fragments/header :: header"></div>
+<div class="container">
+    Enter Tool Info
+
+    <form action="#" th:action="@{/tool}" th:object="${tool}" method="post">
+        <div class="row form-group">
+            <div class="col-lg-6">
+                <input type="text" class="form-control" th:field="*{id}" placeholder="id" hidden="true"/>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-lg-6">
+                <label for="name">Tool Name</label>
+                <input type="text" class="form-control" th:field="*{toolName}" placeholder="Tool Name">
+                <span class="badge-warning" th:if="${#fields.hasErrors('toolName')}" th:errors="*{toolName}">Tool Name Error</span>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-lg-6">
+                <label for="name">Tool Category</label>
+                <input type="text" class="form-control" th:field="*{toolCategory}" placeholder="name">
+                <span class="badge-warning" th:if="${#fields.hasErrors('toolCategory')}" th:errors="*{toolCategory}">Tool Category Error</span>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-lg-6">
+                <label for="name">Age</label>
+                <input type="text" class="form-control" th:field="*{age}">
+                <span class="badge-warning" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Tool Age Error</span>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-lg-6">
+                <label for="name">Owner</label>
+                <input type="text" class="form-control" th:field="*{owner}">
+                <span class="badge-warning" th:if="${#fields.hasErrors('owner')}" th:errors="*{owner}">Tool Owner Error</span>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+        <a class="btn btn-lg btn-warning" th:href="@{/tool}"> Cancel </a></td>
+    </form>
+</div>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>
