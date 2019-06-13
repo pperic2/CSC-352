@@ -8,9 +8,9 @@
 <div layout:fragment="content">
     <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
     <h2>This is your personal Dashboard!</h2>
-
-    <p></p>
+    <h3>Click  <a th:href="@{/tools/list}">here</a> if you would like to search for the items</h3>
 </div>
 
 </body>
+
 </html>

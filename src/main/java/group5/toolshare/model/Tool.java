@@ -18,4 +18,43 @@ public class Tool {
     private String age;
     private String owner;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public String getToolCategory() {
+        return toolCategory;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public void setToolCategory (String toolCategory) {
+        this.toolCategory = toolCategory;
+    }
+
+    public void setOwner (String owner){
+        this.owner = owner;
+    }
 }
