@@ -1,5 +1,4 @@
 package group5.toolshare.controller;
-
 import group5.toolshare.repository.ToolRepository;
 import group5.toolshare.model.Tool;
 import org.springframework.stereotype.Controller;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/tool")
 public class ToolController {
 
+    //private int counter = 0;
     private final ToolRepository repo;
     public ToolController(ToolRepository repo) {
         this.repo = repo;
@@ -41,7 +41,7 @@ public class ToolController {
         if (bindingResult.hasErrors()) {
             return "tools/form";
         }
-
+        //tool.setId(Double.toString(Math.random()));
         repo.save(tool);
 
         return "redirect:/tool";

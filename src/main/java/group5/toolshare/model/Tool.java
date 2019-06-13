@@ -1,28 +1,40 @@
 package group5.toolshare.model;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Transient;
 import javax.persistence.Id;
 
 import org.springframework.data.mongodb.core.index.IndexDirection;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.math.BigInteger;
+
 @Document(collection = "AllTools")
 public class Tool {
 
     @Id
-    private Long id;
-    @Indexed(unique = true, direction = IndexDirection.DESCENDING, dropDups = true)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private BigInteger id;
+
+
+//    @Id
+//    @GeneratedValue
+//    private String id;
+
+//    @Indexed(unique = true, direction = IndexDirection.DESCENDING, dropDups = true)
 
     private String name;
     private String toolCategory;
     private String age;
     private String owner;
 
-    public Long getId() {
+    public BigInteger getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(BigInteger id) {
         this.id = id;
     }
 
