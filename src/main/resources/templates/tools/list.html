@@ -23,9 +23,9 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:if="${tools != null}">
-                    <td colspan="2"> No Tools Available </td>
-                </tr>
+<!--                <tr th:if="${tools.isEmpty()}">-->
+<!--                    <td colspan="2"> No Tools Available </td>-->
+<!--                </tr>-->
                 <tr th:each="tool : ${tools}">
                     <td span th:text="${tool.name}"></td>
                     <td span th:text="${tool.toolCategory}"></td>
